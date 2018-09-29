@@ -38,42 +38,42 @@ class Convertor {
     convertir(medida, medidaActual, unidadAConvertir, tipoMedida) {
         switch (tipoMedida) {
             case 'Temperatura':
-                    if (medidaActual == "c" && unidadAConvertir == "f") {
-                        alert("Resultado: " + this.CToF(medida) + " fahrenheit");
-                    }
-                    if (medidaActual == "f" && unidadAConvertir == "c") {
-                        alert("Resultado: " + this.FToC(medida) + " celsius");
-                    }
-                    if (medidaActual == "k" && unidadAConvertir == "f") {
-                        alert("Resultado: " + this.KToF(medida) + " fahrenheit");
-                    }
-                    if (medidaActual == "f" && unidadAConvertir == "k") {
-                        alert("Resultado: " + this.FToK(medida) + " kelvin");
-                    }
-                    if (medidaActual == "k" && unidadAConvertir == "c") {
-                        alert("Resultado: " + this.KToC(medida) + " celsius");
-                    }
-                    if (medidaActual == "c" && unidadAConvertir == "k") {
-                        alert("Resultado: " + this.CToK(medida) + " kelvin");
-                    }
-                    break; 
+                if (medidaActual == "c" && unidadAConvertir == "f") {
+                    alert("Resultado: " + this.CToF(medida) + " fahrenheit");
+                }
+                else if (medidaActual == "f" && unidadAConvertir == "c") {
+                    alert("Resultado: " + this.FToC(medida) + " celsius");
+                }
+                else if (medidaActual == "k" && unidadAConvertir == "f") {
+                    alert("Resultado: " + this.KToF(medida) + " fahrenheit");
+                }
+                else if (medidaActual == "f" && unidadAConvertir == "k") {
+                    alert("Resultado: " + this.FToK(medida) + " kelvin");
+                }
+                else if (medidaActual == "k" && unidadAConvertir == "c") {
+                    alert("Resultado: " + this.KToC(medida) + " celsius");
+                }
+                else if (medidaActual == "c" && unidadAConvertir == "k") {
+                    alert("Resultado: " + this.CToK(medida) + " kelvin");
+                }
+                break;
             case 'Longitud':
                 if (medidaActual == "m" && unidadAConvertir == "cm") {
                     alert("Resultado: " + this.MtoCm(medida) + " centimetros");
                 }
-                if (medidaActual == "cm" && unidadAConvertir == "m") {
+                else if (medidaActual == "cm" && unidadAConvertir == "m") {
                     alert("Resultado: " + this.CmtoM(medida) + " metros");
                 }
-                if (medidaActual == "km" && unidadAConvertir == "m") {
+                else if (medidaActual == "km" && unidadAConvertir == "m") {
                     alert("Resultado: " + this.KmToM(medida) + " metros");
                 }
-                if (medidaActual == "m" && unidadAConvertir == "km") {
+                else if (medidaActual == "m" && unidadAConvertir == "km") {
                     alert("Resultado: " + this.MToKm(medida) + " kilometros");
                 }
-                if (medidaActual == "p" && unidadAConvertir == "m") {
+                else if (medidaActual == "p" && unidadAConvertir == "m") {
                     alert("Resultado: " + this.PToM(medida) + " metros");
                 }
-                if (medidaActual == "m" && unidadAConvertir == "p") {
+                else if (medidaActual == "m" && unidadAConvertir == "p") {
                     alert("Resultado: " + this.MToP(medida) + " pies");
                 }
                 break;
