@@ -1,3 +1,4 @@
+
 class Convertor {
     CToF(unidad) {
         return ((9 * unidad) / 5) + 32;
