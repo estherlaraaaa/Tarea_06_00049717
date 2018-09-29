@@ -26,27 +26,26 @@ while (true) {
 
 function agregarProducto() {
     let codigo, descripción, tipo, pCompra, pVenta, stock;
-    alert("Bienvenido al formulario de registro de prodcutos, por favor llene todos los campos.");
-    while (true) {
         codigo = prompt("Ingrese el código del producto.");
-        for (let x of productos) {
-            if (x.Codigo == codigo) {
+        while(true){
+        for (let i of productos) {
+            if (i.Codigo == codigo) {
                 codigo = null;
             }
         }
         if (codigo != null) {
             break;
         } else {
-            alert("Ese código ya ha sido registrado.");
+            alert("el producto ya ha sido registrado con ese codigo");
         }
     }
 
     descripción = prompt("Ingrese la descripción del producto.");
     tipo = prompt("Especifique el tipo de producto.");
-    pCompra = prompt("Ingrese el precio de compra del producto. ($)");
-    pVenta = prompt("Ingrese el precio de venta del producto. ($)");
+    pCompra = prompt("Ingrese el precio de compra del producto.");
+    pVenta = prompt("Ingrese el precio de venta del producto.");
     while (true) {
-        stock = prompt("Ingrese el stock del producto. (Mayor o igual a 0)");
+        stock = prompt("Ingrese el stock del producto.");
         if (stock < 0) {
             alert("Ingrese una cantidad válida.");
         } else {
@@ -56,9 +55,9 @@ function agregarProducto() {
 
     productos.push(
         {
-            Codigo: codigo,
-            Descripcion: descripción,
-            Tipo: tipo,
+            codigo: codigo,
+            descripcion: descripción,
+            tipo: tipo,
             pCompra: pCompra,
             pVenta: pVenta,
             stock: stock
@@ -66,16 +65,16 @@ function agregarProducto() {
     );
 
     alert("Se ha registrado un producto");
-
+    
 }
 
 function modificarStock() {
     let codigo, producto = null, stock;
     alert("Ingrese datos para modificar");
     codigo = prompt("Ingrese el código del producto.");
-    for (let x of productos) {
-        if (codigo == x.Codigo) {
-            producto = x;
+    for (let i of productos) {
+        if (codigo == i.Codigo) {
+            producto = i;
         }
     }
 
@@ -102,9 +101,9 @@ function registrarVenta() {
     let codigo, producto = null, stock;
     alert("Registrando un producto");
     codigo = prompt("Ingrese el código del producto.");
-    for (let x of productos) {
-        if (codigo == x.Codigo) {
-            producto = x;
+    for (let i of productos) {
+        if (codigo == i.Codigo) {
+            producto = i;
         }
     }
 
@@ -115,7 +114,7 @@ function registrarVenta() {
                 stock = prompt("Ingrese la cantidad de producto a vender.", producto.Stock);
                 if (stock <= 0) {
                     alert("Ingrese una cantidad válida.");
-                } else if (producto.Stock - stock < 0) {
+                } else if (producto.stock - stock < 0) {
                     alert("No cuenta con stock suficiente para realizar la venta.");
                 } else {
                     break;
@@ -144,9 +143,9 @@ function promVentas() {
 
         for (let venta of ventas) {
             for (let prod of productos) {
-                if (prod.Codigo == venta.Codigo) {
-                    ingresos += (prod.Precio_Venta - prod.Precio_Compra) * venta.Cantidad;
-                    cantidad += venta.Cantidad;
+                if (prod.codigo == venta.codigo) {
+                    ingresos += (prod.pVenta - prod.pCompra) * venta.cantidad;
+                    cantidad += venta.cantidad;
                 }
             }
         }
@@ -161,13 +160,13 @@ function promVentas() {
 function stockCero() {
     alert("Listado de productos con stock de 0.");
     let bandera = false;
-    for (let x of productos) {
-        if (x.Stock == 0) {
-            let msg = "";
-            msg = msg + "Código: " + x.Codigo + "\n";
-            msg = msg + "Descripción: " + x.Descripcion + "\n";
-            msg = msg + "Tipo: " + x.Tipo + "\n";
-            alert(msg);
+    for (let i of productos) {
+        if (i.stock == 0) {
+            let mensaje = "";
+            mensaje = mensaje + "Código: " + i.Codigo + "\n";
+            mensaje = mensaje + "Descripción: " + i.descripcion + "\n";
+            mensaje = mensaje + "Tipo: " + i.tipo + "\n";
+            alert(mensaje);
             bandera = true;
         }
     }
